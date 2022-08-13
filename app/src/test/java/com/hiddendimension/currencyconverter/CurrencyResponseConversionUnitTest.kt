@@ -48,7 +48,7 @@ class CurrencyResponseConversionUnitTest {
 
 
     @Test
-    fun lastResponseTime() {
+    fun `atleast 7 hours hans been passed`() {
         val x = System.currentTimeMillis() / 1000
         assertThat((x - 1660345202) / 3600).isAtLeast(7)
     }
