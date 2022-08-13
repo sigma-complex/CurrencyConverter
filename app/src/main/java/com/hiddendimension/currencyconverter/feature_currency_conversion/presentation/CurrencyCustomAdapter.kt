@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hiddendimension.currencyconverter.R
-import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.model.ItemsViewModel
+import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.model.CurrencyViewModel
 
-class CurrencyCustomAdapter(private val mList: List<ItemsViewModel>) :
+class CurrencyCustomAdapter(private val mList: List<CurrencyViewModel>) :
     RecyclerView.Adapter<CurrencyCustomAdapter.ViewHolder>() {
 
     // create new views

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.hiddendimension.currencyconverter.R
 import com.hiddendimension.currencyconverter.databinding.ActivityMainBinding
-import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.model.ItemsViewModel
+import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.model.CurrencyViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
     //The data set always fully changes
     @SuppressLint("NotifyDataSetChanged")
-    private fun fetchCurrency(data: ArrayList<ItemsViewModel>) {
+    private fun fetchCurrency(data: ArrayList<CurrencyViewModel>) {
 
         if (binding.etFrom.text?.isNotEmpty() == true) {
 

@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.hiddendimension.currencyconverter.feature_currency_conversion.data.util.CurrencyResponseServiceHelper
 import com.hiddendimension.currencyconverter.feature_currency_conversion.data.repository.CurrencyRepositoryInterface
 import com.hiddendimension.currencyconverter.feature_currency_conversion.data.repository.Resource
-import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.model.ItemsViewModel
+import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.model.CurrencyViewModel
 import com.hiddendimension.currencyconverter.feature_currency_conversion.domain.util.DispatcherProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,7 +21,7 @@ class MainActivityViewModel @Inject constructor(
 ) : ViewModel() {
 
     sealed class CurrencyEvent {
-        class Success(val currencyList: ArrayList<ItemsViewModel>) : CurrencyEvent()
+        class Success(val currencyList: ArrayList<CurrencyViewModel>) : CurrencyEvent()
         class Failure(val errorText: String) : CurrencyEvent()
         object Loading : CurrencyEvent()
         object Empty : CurrencyEvent()
@@ -30,7 +30,7 @@ class MainActivityViewModel @Inject constructor(
     private val _conversion = MutableStateFlow<CurrencyEvent>(CurrencyEvent.Empty)
     val conversion: StateFlow<CurrencyEvent> = _conversion
 
-    var data: ArrayList<ItemsViewModel>? = null
+    var data: ArrayList<CurrencyViewModel>? = null
 
     init {
         data = ArrayList()
@@ -74,7 +74,7 @@ class MainActivityViewModel @Inject constructor(
 
                     for (x in arr) {
                         data?.add(
-                            ItemsViewModel(
+                            CurrencyViewModel(
 
                                 "${
                                     String.format(
