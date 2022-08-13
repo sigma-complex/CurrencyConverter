@@ -30,11 +30,9 @@ class MainActivityViewModel @Inject constructor(
     private val _conversion = MutableStateFlow<CurrencyEvent>(CurrencyEvent.Empty)
     val conversion: StateFlow<CurrencyEvent> = _conversion
 
-    //  var arr: Array<out String>? = null
     var data: ArrayList<ItemsViewModel>? = null
 
     init {
-        //  arr = applicationContext.resources.getStringArray(R.array.currency_codes)
         data = ArrayList()
     }
 
@@ -72,7 +70,6 @@ class MainActivityViewModel @Inject constructor(
                     CurrencyResponseServiceHelper.makeCurrencyHashMap()
 
 
-
                     data?.clear()
 
                     for (x in arr) {
@@ -94,14 +91,8 @@ class MainActivityViewModel @Inject constructor(
                         )
                     }
 
-
                     _conversion.value = CurrencyEvent.Success(data!!)
                 }
-
-//                else {
-//                    _conversion.value = CurrencyEvent.Failure("Unexpected error")
-//
-//                }
 
             }
         }
