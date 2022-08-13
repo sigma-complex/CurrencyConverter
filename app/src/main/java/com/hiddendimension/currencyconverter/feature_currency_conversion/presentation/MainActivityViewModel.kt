@@ -21,7 +21,7 @@ class MainActivityViewModel @Inject constructor(
 ) : ViewModel() {
 
     sealed class CurrencyEvent {
-        class Success(val resultText: ArrayList<ItemsViewModel>) : CurrencyEvent()
+        class Success(val currencyList: ArrayList<ItemsViewModel>) : CurrencyEvent()
         class Failure(val errorText: String) : CurrencyEvent()
         object Loading : CurrencyEvent()
         object Empty : CurrencyEvent()

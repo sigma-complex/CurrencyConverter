@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
                 when (event) {
                     is MainActivityViewModel.CurrencyEvent.Success -> {
-                        fetchCurrency(event.resultText)
+                        fetchCurrency(event.currencyList)
                     }
 
                     is MainActivityViewModel.CurrencyEvent.Failure -> {
